@@ -1,11 +1,10 @@
 const db = require("../config/db");
 const app = require("../app");
 require("dotenv").config();
+const mkdirp = require("mkdirp");
 
 const UPLOAD_DIR = process.env.UPLOAD_DIR;
 const AVATAR_OF_USERS = process.env.AVATAR_OF_USERS;
-
-const mkdirp = require("mkdirp");
 
 const PORT = process.env.PORT || 3000;
 
