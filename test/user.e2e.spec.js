@@ -6,7 +6,7 @@ const app = require("../app");
 const User = require("../model/user");
 const { newUserForRouteUser } = require("./data/data");
 
-// jest.mock("cloudinary");
+jest.mock("cloudinary");
 
 describe("Test route users", () => {
   let token;
@@ -27,6 +27,7 @@ describe("Test route users", () => {
       .post("/users/users/signup")
       .send(newUserForRouteUser)
       .set("Accept", "application/json");
+
     expect(response.status).toEqual(201);
     expect(response.body).toBeDefined();
   });
